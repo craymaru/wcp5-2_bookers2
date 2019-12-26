@@ -68,6 +68,16 @@ div.actions {
 label {
   display: block;
 }
+header {
+  color: white;
+}
+header .navbar-left span {
+  font-size: 20px;
+  padding-top: 10px;
+}
+.body {
+  margin-top: 51px;
+}
 
 // Adds: Bootstrap
 @import "bootstrap-sprockets";
