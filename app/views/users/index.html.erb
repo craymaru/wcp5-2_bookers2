@@ -16,8 +16,8 @@
         <% @users.each do |user| %>
           <tr>
             <td><%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle attachment user profile_image", fallback: "no_image.jpg" %></td>
-            <td>kkkk</td>
-            <td><a class="user_10218" href="/users/10218">Show</a></td>
+            <td><%= user.name %></td>
+            <td><%= link_to "Show", user_path(user) %></td>
           </tr>
         <% end %>
       </tbody>
