@@ -11,17 +11,22 @@ class User < ApplicationRecord
   attachment :profile_image
 
   # Adds: except email from devise
-  def email_required?
-    false
-  end
+  # COMMENT OUT V
+  # def email_required?
+  #   false
+  # end
 
-  def email_changed?
-    false
-  end
+  # def email_changed?
+  #   false
+  # end
+  # COMMENT OUT ^
 
   # Varidation
-  validates :username,
-            presence: true
+
+  validates :name,
+    uniqueness: true,
+    presence: true,
+    length: { minimum: 2, maximum: 20 }
   validates :introduction,
-            length: { minimum: 0, maximum: 50 }
+            length: { maximum: 50 }
 end

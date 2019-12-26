@@ -2,6 +2,9 @@ class UsersController < ApplicationController
   # Adds: reject not-signin users
   before_action :authenticate_user!
 
+  # Adds: reject not-edit another user prifiles
+  before_action :correct_user, only: [:edit, :update]
+
   def index
     @users = User.all
     @book_new = Book.new # left content
@@ -29,6 +32,13 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def correct_user
+    user = User.find(params[:id])
+    if current_user != user
+      redirect_to root_path
+    end
+  end
 
   def user_params
     params.require(:user).permit(:name, :profile_image, :introduction)

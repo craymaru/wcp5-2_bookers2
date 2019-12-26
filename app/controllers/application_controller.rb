@@ -4,24 +4,18 @@ class ApplicationController < ActionController::Base
 
   # Signin Singup Redirects
   def after_sign_in_path_for(resource)
-    if current_user
-      # flash[:notice] = "Logged in!" 
-      mypage_path(resource)
-    else
-      # flash[:notice] = "Signup!" 
-      mypage_path(resource)
-    end
+    mypage_path(resource)
   end
 
 
   protected
 
   def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:email])
+    # Adds: name
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
-    # Adds: username
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:username])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:username])
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:name])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name])
   end
 
   #--------------------------------
