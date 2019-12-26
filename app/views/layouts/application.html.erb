@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Wcp52Bookers2</title>
+    <title>Bookers!</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%# Adds: Font Awesome %>
@@ -37,12 +37,11 @@
         </div>
       </header>
       <div class="container">
-      <%# Notice %>
+        <%# Notice %>
         <% if flash[:notice] %>
           <p id="notice"><%= flash[:notice] %></p>
         <% end %>
-
-      <%# yield %>
+        <%# yield %>
         <%= yield %>
       </div>
       <%# Footer %>

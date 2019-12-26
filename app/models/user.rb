@@ -7,14 +7,21 @@ class User < ApplicationRecord
   # Adds: Associations 1(User):N(Book)
   has_many :books, dependent: :destroy
 
-  # Adds: 
+  # Adds:
   attachment :profile_image
 
   # Adds: except email from devise
- def email_required?
-   false
- end
- def email_changed?
-   false
- end
+  def email_required?
+    false
+  end
+
+  def email_changed?
+    false
+  end
+
+  # Varidation
+  validates :username,
+            presence: true
+  validates :introduction,
+            length: { minimum: 0, maximum: 50 }
 end
