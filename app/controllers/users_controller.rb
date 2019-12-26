@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  # Adds: reject not-signin users
+  before_action :authenticate_user!
+
   def index
     @users = User.all
     @book = Book.new # left contents
@@ -25,5 +28,5 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :profile_image, :introduction)
-end
+  end
 end
