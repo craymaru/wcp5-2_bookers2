@@ -19,18 +19,29 @@ class BooksController < ApplicationController
   end
 
   def create
-    book = Book.new(book_params)
-    book.user_id = current_user.id
+    @book = Book.new(book_params)
+    @book.user_id = current_user.id
     # Another Syntax
     # book = current_user.book.new(book_params_params)
-    book.save
-    redirect_to books_path
+    #
+    # commentout
+    # book.save
+    # redirect_to books_path
+    #
+    if @book.save
+      redirect_to book_path(@book), notice: "You have creatad book successfully."
+    else
+      # Reload
+      @book = Book.new(book_params)
+      @book.user_id = current_user.id
+      render :index
+    end
   end
 
   def update
     book = Book.find(params[:id])
     book.update(book_params)
-    redirect_to book_path(book)
+    redirect_to book_path(book), notice: 'You have updated book successfully.'
   end
 
   def destroy

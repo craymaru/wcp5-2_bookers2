@@ -9,4 +9,12 @@ class User < ApplicationRecord
 
   # Adds: 
   attachment :profile_image
+
+  # Adds: except email from devise
+ def email_required?
+   false
+ end
+ def email_changed?
+   false
+ end
 end

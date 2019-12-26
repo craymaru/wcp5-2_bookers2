@@ -2,7 +2,7 @@
 <p id="notice"></p>
 <div class='row'>
   <%# ↓ INSERT LEFT CONTENTS %>
-  <%= render 'users/left_contents', book_new: @book_new, user: @user%>
+  <%= render 'users/left_contents', book_new: @book_new, user: @book.user%>
   <%# ↑ INSERT LEFT CONTENTS END %>
   <div class="col-xs-9">
     <h2>Book detail</h2>
