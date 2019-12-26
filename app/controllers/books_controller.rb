@@ -61,7 +61,7 @@ class BooksController < ApplicationController
     book = Book.find(params[:id])
     # refactering because book model has belong_to
     if current_user.id != book.user.id
-      redirect_to root_path
+      redirect_to books_path
     end
   end
 

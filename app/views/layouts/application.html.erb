@@ -15,7 +15,7 @@
       <header class="navbar navbar-fixed-top navbar-inverse">
         <div class="container">
           <nav class="nav navbar-nav navbar-left">
-            <span>Bookers</span>
+            <span class="title" >Bookers</span>
           </nav>
           <nav>
             <ul class="nav navbar-nav navbar-right">
@@ -29,7 +29,7 @@
                 <%# sign out %>
                 <li><%= link_to "Home", root_path, class:"glyphicon glyphicon-home home" %></li>
                 <li><%= link_to "About", home_about_path, class:"glyphicon glyphicon-link about" %></li>
-                <li><%= link_to "sign up", new_user_registration_path, class:"glyphicon glyphicon-edit sign_up" %></li>
+                <li><%= link_to "Sign up", new_user_registration_path, class:"glyphicon glyphicon-edit sign_up" %></li>
                 <li><%= link_to "login", new_user_session_path, class:"glyphicon glyphicon-log-in sign_in" %></li>
               <% end %>
             </ul>
@@ -48,7 +48,7 @@
       <footer>
         <div class="container">
           <div class="row">
-            <div class="col-xs-3 col-xs-offset-9">
+            <div class="col-xs-2 col-xs-offset-10">
               <p>© 2019 Infratop, Inc.</p>
             </div>
           </div>
