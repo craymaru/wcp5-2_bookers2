@@ -1,5 +1,9 @@
+<%# USERS SHOW %>
 <div class="row">
-<%# INSERT LEFT %>
+  <%# ↓ INSERT LEFT CONTENTS %>
+  <%= render 'users/left_contents', book: @book , user: @user%>
+  <%# ↑ INSERT LEFT CONTENTS END %>
+  <%# RIGHT CONTENTS %>
   <div class="col-xs-9">
     <h2>Books</h2>
     <table class="table table-hover table-inverse">

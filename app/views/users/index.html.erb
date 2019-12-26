@@ -1,5 +1,7 @@
 <div class="row">
-  <%# LEFT BOX IS HERE %>
+  <%# ↓ INSERT LEFT CONTENTS %>
+  <%= render 'users/left_contents', book: @book, user: @user%>
+  <%# ↑ INSERT LEFT CONTENTS END %>
   <div class="col-xs-9">
     <h2>Users</h2>
     <table class="table">
