@@ -6,7 +6,7 @@
     </div>
     <div class="field">
       <label for="user_image">Image</label>
-      <input value="{}" data-reference="40eddea24da39067127e4089839929b5" type="hidden" name="user[profile_image]"><input class="user_image" data-reference="40eddea24da39067127e4089839929b5" include_hidden="false" type="file" name="user[profile_image]" id="user_profile_image">
+      <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
     </div>
     <div class="field">
       <label for="user_introduction">Introduction</label>
