@@ -6,7 +6,7 @@ class BooksController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
 
   def index
-    @books = Book.all
+    @books = Book.all.order(created_at: :desc)
     @book_new = Book.new # left content
     @user = current_user # left content
   end
@@ -34,7 +34,7 @@ class BooksController < ApplicationController
     if @book_new.save
       redirect_to book_path(@book_new), notice: "You have creatad book successfully."
     else
-      @books = Book.all
+      @books = Book.all.order(created_at: :desc)
       @user = current_user # left content
       render :index
     end

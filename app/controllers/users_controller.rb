@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
 
   def index
-    @users = User.all
+    @users = User.all.order(created_at: :desc)
     @book_new = Book.new # left content
     @user = current_user # left content
   end
