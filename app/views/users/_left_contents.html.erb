@@ -24,7 +24,7 @@
   <% end %>
   <%# NEW BOOK %>
   <h2>New book</h2>
-  <%= form_for(book) do |f| %>
+  <%= form_for(book_new) do |f| %>
     <div class="field row">
       <label for="book_title">Title</label>
       <%= f.text_field :title, class:'col-xs-12 book_title' %>
